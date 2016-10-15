@@ -32,43 +32,43 @@ def format_configs
   [
     {
       environment: 'env/foo-bar baz:qux',
-      facility: 'service/foo-bar baz:qux',
-      host: 'host/foo-bar baz:qux'
+      facility:    'service/foo-bar baz:qux',
+      host:        'host/foo-bar baz:qux'
     },
     {
       environment: 'env',
-      facility: 'service',
-      host: 'host'
+      facility:    'service',
+      host:        'host'
     },
     {
       environment: 'env',
-      facility: nil,
-      host: 'host'
+      facility:    nil,
+      host:        'host'
     },
     {
       environment: 'env',
-      facility: 'service',
-      host: nil
+      facility:    'service',
+      host:        nil
     },
     {
       environment: nil,
-      facility: 'service',
-      host: 'host'
+      facility:    'service',
+      host:        'host'
     },
     {
       environment: 'env',
-      facility: nil,
-      host: nil
+      facility:    nil,
+      host:        nil
     },
     {
       environment: nil,
-      facility: nil,
-      host: 'host'
+      facility:    nil,
+      host:        'host'
     },
     {
       environment: nil,
-      facility: 'service',
-      host: nil
+      facility:    'service',
+      host:        nil
     }
   ]
 end

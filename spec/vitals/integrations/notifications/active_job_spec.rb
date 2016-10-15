@@ -13,7 +13,7 @@ describe Vitals::Integrations::Notifications::ActiveJob do
   after do
     ActiveSupport::Notifications.unsubscribe(@sub)
   end
-  
+
   it 'handle notifications' do
     class FooBarWorker
       def queue_name
@@ -39,7 +39,7 @@ describe Vitals::Integrations::Notifications::ActiveJob do
     report[:timing].must_equal('jobs.foobarqueue_workers.foobar')
     report[:val].must_be_within_delta(100, 50)
     reporter.flush
-    
+
     ActiveSupport::Notifications.instrument('perform.active_job',
                                             {
                                               job: FooBarJob.new,

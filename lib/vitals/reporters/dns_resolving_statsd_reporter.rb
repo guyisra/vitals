@@ -16,7 +16,7 @@ module Vitals::Reporters
       unless (@host =~ Resolv::AddressRegex || @host == 'localhost'.freeze)
         ip, ttl = query_dns
         Thread.new do
-          while true do
+          while true
             sleep ttl
             previous_ip = ip
             ip, ttl = query_dns

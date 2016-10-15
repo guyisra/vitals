@@ -35,7 +35,7 @@ describe Vitals::Integrations::Notifications::Grape do
         end
 
         get :raise_error do
-         raise StandardError.new("Oh noes!")
+         fail StandardError.new("Oh noes!")
         end
 
         get :make_error do
@@ -114,7 +114,6 @@ describe Vitals::Integrations::Notifications::Grape do
         report[:val].must_be_within_delta(100, 40)
       end
     end
-      
   end
 
   describe "grape nonversioned notifications api" do

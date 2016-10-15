@@ -19,11 +19,11 @@ describe Vitals::Integrations::Notifications::ActionController do
   it 'handle notifications' do
     ActiveSupport::Notifications.instrument('process_action.action_controller',
                                             {
-                                              method: 'GET',
-                                              status: 200,
-                                              action: 'new',
-                                              controller: 'RegistrationsController',
-                                              db_runtime: 12,
+                                              method:       'GET',
+                                              status:       200,
+                                              action:       'new',
+                                              controller:   'RegistrationsController',
+                                              db_runtime:   12,
                                               view_runtime: 30
                                             }) do
                                               sleep 0.1
@@ -33,11 +33,11 @@ describe Vitals::Integrations::Notifications::ActionController do
     report = reporter.reports[0]
     report[:timing].must_equal('controllers.registrations_new.get.200.all')
     report[:val].must_be_within_delta(100, 50)
-    
+
     report = reporter.reports[1]
     report[:timing].must_equal('controllers.registrations_new.get.200.db')
     report[:val].must_equal(12)
-    
+
     report = reporter.reports[2]
     report[:timing].must_equal('controllers.registrations_new.get.200.view')
     report[:val].must_equal(30)

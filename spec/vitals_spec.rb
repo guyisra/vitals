@@ -33,7 +33,7 @@ describe Vitals do
         Vitals.reporter.format.must_be_kind_of(Vitals::Formats::ProductionFormat)
       }
     }
-    
+
     it "has default configuration" do
       Vitals.configure!
       assert_defaults.call

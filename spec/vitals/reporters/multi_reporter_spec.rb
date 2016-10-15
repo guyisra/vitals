@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe Vitals::Reporters::ConsoleReporter do
-  let(:reporter){ 
+  let(:reporter){
     reporter_one = Vitals::Reporters::ConsoleReporter.new(category: 'one', format: TestFormat.new)
     reporter_two = Vitals::Reporters::ConsoleReporter.new(category: 'two', format: TestFormat.new)
-   
+
     Vitals::Reporters::MultiReporter.new(reporters: [
       reporter_one,
       reporter_two
-    ]) 
+    ])
   }
 
   it '#inc' do
