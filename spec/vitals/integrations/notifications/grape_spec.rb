@@ -35,7 +35,7 @@ describe Vitals::Integrations::Notifications::Grape do
         end
 
         get :raise_error do
-          fail StandardError.new("Oh noes!")
+          fail StandardError, "Oh noes!"
         end
 
         get :make_error do

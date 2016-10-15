@@ -115,7 +115,7 @@ describe Vitals::Integrations::Rack::Requests do
     def app
       Class.new(Sinatra::Base) do
         use(Class.new do
-          def initialize(app, options = {})
+          def initialize(app, _options = {})
             @app = app
           end
 

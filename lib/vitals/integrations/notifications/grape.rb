@@ -8,7 +8,7 @@ module Vitals::Integrations::Notifications
 
     private
 
-    def self.handle(name, started, finished, unique_id, payload)
+    def self.handle(_name, started, finished, _unique_id, payload)
       endpoint = payload[:endpoint]
       route    = endpoint.route
       method   = route.route_method.downcase

@@ -70,6 +70,6 @@ module Vitals
   private
 
   def self.classify(sym)
-    sym.to_s.split('_').collect! { |w| w.capitalize }.join
+    sym.to_s.split('_').collect!(&:capitalize).join
   end
 end

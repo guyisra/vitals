@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Vitals::Reporters::ConsoleReporter do
-  let(:reporter) {
+  let(:reporter) do
     reporter_one = Vitals::Reporters::ConsoleReporter.new(category: 'one', format: TestFormat.new)
     reporter_two = Vitals::Reporters::ConsoleReporter.new(category: 'two', format: TestFormat.new)
 
@@ -9,7 +9,7 @@ describe Vitals::Reporters::ConsoleReporter do
                                            reporter_one,
                                            reporter_two
                                          ])
-  }
+  end
 
   it '#inc' do
     out, _ = capture_io { reporter.inc('1.2') }

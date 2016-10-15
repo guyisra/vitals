@@ -23,7 +23,7 @@ module Vitals::Reporters
       @reports << { timing: n(m), val: v }
     end
 
-  private
+    private
 
     def n(m)
       Vitals::Utils.normalize_metric(m)

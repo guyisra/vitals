@@ -63,7 +63,7 @@ module Vitals::Integrations::Rack
       "#{ctrl.controller_name}_#{ctrl.action_name}"
     end
 
-    def self.rack_path(env)
+    def self.rack_path(_env)
       ''
     end
   end

@@ -24,16 +24,16 @@ describe Vitals do
   end
 
   describe ".configure" do
-    let(:assert_defaults) {
-      lambda {
+    let(:assert_defaults) do
+      lambda do
         host = Vitals::Utils.hostname
         Vitals.reporter.must_be_kind_of(Vitals::Reporters::InmemReporter)
         Vitals.reporter.format.environment.must_equal(ENV['RACK_ENV'] || 'development')
         Vitals.reporter.format.host.must_equal(host)
         Vitals.reporter.format.facility.must_equal('default')
         Vitals.reporter.format.must_be_kind_of(Vitals::Formats::ProductionFormat)
-      }
-    }
+      end
+    end
 
     it "has default configuration" do
       Vitals.configure!
@@ -62,7 +62,7 @@ describe Vitals do
     it 'configures modules' do
       begin
         subscribers = Vitals.subscribe!(:action_controller, :active_job, :grape)
-        subscribers.each { |sub| sub.wont_be_nil }
+        subscribers.each(&:wont_be_nil)
       ensure
         subscribers.each { |sub| ActiveSupport::Notifications.unsubscribe(sub) }
       end
