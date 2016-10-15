@@ -43,4 +43,3 @@ describe Vitals::Integrations::Notifications::ActionController do
     report[:val].must_equal(30)
   end
 end
-

@@ -29,7 +29,7 @@ describe Vitals::Integrations::Notifications::ActiveJob do
 
     ActiveSupport::Notifications.instrument('perform.active_job',
                                             {
-                                              job: FooBarWorker.new,
+                                              job: FooBarWorker.new
                                             }) do
                                               sleep 0.1
                                             end
@@ -42,7 +42,7 @@ describe Vitals::Integrations::Notifications::ActiveJob do
 
     ActiveSupport::Notifications.instrument('perform.active_job',
                                             {
-                                              job: FooBarJob.new,
+                                              job: FooBarJob.new
                                             }) do
                                               sleep 0.1
                                             end
@@ -53,4 +53,3 @@ describe Vitals::Integrations::Notifications::ActiveJob do
     report[:val].must_be_within_delta(100, 50)
   end
 end
-

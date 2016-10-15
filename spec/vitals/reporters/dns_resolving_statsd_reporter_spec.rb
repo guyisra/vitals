@@ -49,4 +49,3 @@ describe Vitals::Reporters::DnsResolvingStatsdReporter do
     end
   end
 end
-

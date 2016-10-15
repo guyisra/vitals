@@ -12,15 +12,15 @@ module Vitals::Reporters
     end
 
     def inc(m)
-      @reports << { :inc => n( m ) }
+      @reports << { :inc => n(m) }
     end
 
     def gauge(m, v)
-      @reports << { :gauge => n( m ), :val => v }
+      @reports << { :gauge => n(m), :val => v }
     end
 
     def timing(m, v)
-      @reports << { :timing => n( m ), :val => v }
+      @reports << { :timing => n(m), :val => v }
     end
 
   private

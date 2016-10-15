@@ -15,5 +15,3 @@ describe Vitals::Reporters::BaseReporter do
     }
   end
 end
-
-

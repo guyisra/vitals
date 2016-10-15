@@ -44,5 +44,3 @@ it_formats(
         service
   }
 )
-
-

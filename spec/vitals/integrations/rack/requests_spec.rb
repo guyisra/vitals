@@ -219,4 +219,3 @@ describe Vitals::Integrations::Rack::Requests do
     end
   end
 end
-

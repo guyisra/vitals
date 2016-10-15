@@ -24,7 +24,7 @@ describe Vitals do
   end
 
   describe ".configure" do
-    let(:assert_defaults ){ lambda {
+    let(:assert_defaults){ lambda {
         host = Vitals::Utils.hostname
         Vitals.reporter.must_be_kind_of(Vitals::Reporters::InmemReporter)
         Vitals.reporter.format.environment.must_equal(ENV['RACK_ENV'] || 'development')
@@ -68,4 +68,3 @@ describe Vitals do
     end
   end
 end
-

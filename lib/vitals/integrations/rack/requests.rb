@@ -68,4 +68,3 @@ module Vitals::Integrations::Rack
     end
   end
 end
-

@@ -29,4 +29,3 @@ module Vitals::Reporters
     end
   end
 end
-

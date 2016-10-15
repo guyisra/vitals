@@ -9,4 +9,3 @@ describe Vitals::Utils do
           Vitals::Utils.normalize_metric('good_looking.metric__baz')
         }
 end
-

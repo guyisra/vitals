@@ -23,4 +23,3 @@ module Vitals::Formats
     end
   end
 end
-

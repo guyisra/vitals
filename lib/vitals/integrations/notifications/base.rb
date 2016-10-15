@@ -17,4 +17,3 @@ module Vitals::Integrations::Notifications
     end
   end
 end
-
