@@ -8,6 +8,7 @@ module Vitals::Integrations::Notifications
     end
 
   private
+
     def self.handle(name, started, finished, unique_id, payload)
       job  = payload[:job]
       name = job.class.name.sub(/Job$/, '').sub(/Worker$/, '').downcase

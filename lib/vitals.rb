@@ -21,7 +21,6 @@ require 'vitals/formats/production_format'
 require 'vitals/formats/host_last_format'
 require 'vitals/formats/no_host_format'
 
-
 module Vitals
   def self.configure!
     @config = Configuration.new
@@ -69,6 +68,7 @@ module Vitals
   end
 
   private
+
   def self.classify(sym)
     sym.to_s.split('_').collect! { |w| w.capitalize }.join
   end

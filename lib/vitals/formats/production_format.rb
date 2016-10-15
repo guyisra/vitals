@@ -14,7 +14,7 @@ module Vitals::Formats
     end
 
     def format(m)
-      return @prefix if (m.nil? || m.empty?)
+      return @prefix if m.nil? || m.empty?
       "#{@prefix}.#{Vitals::Utils.normalize_metric(m)}"
     end
   end

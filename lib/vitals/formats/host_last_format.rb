@@ -12,11 +12,11 @@ module Vitals::Formats
       @prefix = [environment, facility].compact.map { |m| Vitals::Utils.normalize_metric(m) }
                                        .join(Vitals::Utils::SEPARATOR).freeze
       @prefix_with_host = [environment, facility, @host].compact.map { |m| Vitals::Utils.normalize_metric(m) }
-                                       .join(Vitals::Utils::SEPARATOR).freeze
+                                                        .join(Vitals::Utils::SEPARATOR).freeze
     end
 
     def format(m)
-      return @prefix_with_host if (m.nil? || m.empty?)
+      return @prefix_with_host if m.nil? || m.empty?
       # TODO optimize by building a renderer function (inlining this) in the initializer.
       # see https://github.com/evanphx/benchmark-ips/blob/master/lib/benchmark/ips/job/entry.rb#L63
       [@prefix, Vitals::Utils.normalize_metric(m), @host].reject { |s| s.nil? || s.empty? }.join(Vitals::Utils::SEPARATOR)

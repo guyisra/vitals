@@ -129,7 +129,6 @@ describe Vitals::Integrations::Rack::Requests do
         get '/foo/bar/baz' do
           "hello get"
         end
-
       end
     end
 

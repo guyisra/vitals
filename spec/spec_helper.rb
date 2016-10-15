@@ -72,6 +72,7 @@ def format_configs
     }
   ]
 end
+
 def format_cases
   ['1.2',
    '1',
@@ -100,6 +101,5 @@ class TestFormat
     args
   end
 end
-
 
 require 'grape'

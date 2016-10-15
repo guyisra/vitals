@@ -19,6 +19,5 @@ module Vitals::Integrations::Notifications
       m = "grape.#{path}.#{method}.#{endpoint.status}.all"
       Vitals.timing(m, duration(started, finished))
     end
-
   end
 end

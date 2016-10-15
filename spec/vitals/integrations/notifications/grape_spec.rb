@@ -35,7 +35,7 @@ describe Vitals::Integrations::Notifications::Grape do
         end
 
         get :raise_error do
-         fail StandardError.new("Oh noes!")
+          fail StandardError.new("Oh noes!")
         end
 
         get :make_error do
@@ -65,8 +65,8 @@ describe Vitals::Integrations::Notifications::Grape do
       get '/api/v1/raise_error'
       last_response.ok?.must_equal(false)
       last_response.status.must_equal 500
-      #this fails:
-      #reporter.reports[0][:timing].must_equal('grape.api.v1.raise_error.get.500.all')
+      # this fails:
+      # reporter.reports[0][:timing].must_equal('grape.api.v1.raise_error.get.500.all')
       reporter.reports.count.must_equal 1
     end
 

@@ -7,7 +7,7 @@ module Vitals::Integrations::Rack
     SINATRA_PATH_INFO = 'sinatra.route'.freeze
     GRAPE_PATH_INFO = 'api.endpoint'.freeze
     RAILS_PATH_INFO = 'action_controller.instance'.freeze
-    REQ_PREF = 'vitals.req_prefix'
+    REQ_PREF = 'vitals.req_prefix'.freeze
 
     def initialize(app, options = {})
       @app = app
@@ -21,7 +21,7 @@ module Vitals::Integrations::Rack
       req_prefix = env[REQ_PREF] ? "#{env[REQ_PREF]}." : ''
 
       path = if env[SINATRA_PATH_INFO]
-            Requests.sinatra_path(env)
+               Requests.sinatra_path(env)
           elsif env[GRAPE_PATH_INFO]
             Requests.grape_path(env)
           elsif env[RAILS_PATH_INFO]
@@ -47,10 +47,10 @@ module Vitals::Integrations::Rack
 
     def self.grape_path(env)
       route = if env[RACK_ROUTER_INFO]
-        # grape 0.11 route bug workaround with http_basic.
-        # when unauthenticated, GRAPE_PATH_INFO route has a nil env. this one
-        # here doesn't:
-        env[RACK_ROUTER_INFO][:route_info]
+                # grape 0.11 route bug workaround with http_basic.
+                # when unauthenticated, GRAPE_PATH_INFO route has a nil env. this one
+                # here doesn't:
+                env[RACK_ROUTER_INFO][:route_info]
       else
         # grape > 0.11
         env[GRAPE_PATH_INFO].route

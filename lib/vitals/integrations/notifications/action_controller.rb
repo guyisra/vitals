@@ -20,6 +20,5 @@ module Vitals::Integrations::Notifications
       Vitals.timing("#{m}.db", payload[:db_runtime]) if payload[:db_runtime]
       Vitals.timing("#{m}.view", payload[:view_runtime]) if payload[:view_runtime]
     end
-
   end
 end
