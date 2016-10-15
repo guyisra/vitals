@@ -4,11 +4,11 @@ module Vitals::Formats
     attr_accessor :host
     attr_accessor :facility
 
-    def initialize(environment:'development', facility:'default', host:'localhost')
+    def initialize(environment: 'development', facility: 'default', host: 'localhost')
       @environment = environment
       @facility = facility
       @host = host
-      @prefix = [environment, host, facility].compact.map{|m| Vitals::Utils.normalize_metric(m) }
+      @prefix = [environment, host, facility].compact.map { |m| Vitals::Utils.normalize_metric(m) }
                                              .join(".").freeze
       # TODO prematerialize working prefix with metric name sanitation
     end

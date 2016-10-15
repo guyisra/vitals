@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'vitals/integrations/notifications/action_controller'
 
 describe Vitals::Integrations::Notifications::ActionController do
-  let(:reporter){Vitals::Reporters::InmemReporter.new}
+  let(:reporter) { Vitals::Reporters::InmemReporter.new }
 
   before do
     reporter.flush

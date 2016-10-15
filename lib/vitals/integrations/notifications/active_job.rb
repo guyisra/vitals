@@ -10,7 +10,7 @@ module Vitals::Integrations::Notifications
   private
     def self.handle(name, started, finished, unique_id, payload)
       job  = payload[:job]
-      name = job.class.name.sub(/Job$/, '').sub(/Worker$/,'').downcase
+      name = job.class.name.sub(/Job$/, '').sub(/Worker$/, '').downcase
 
       Vitals.timing("jobs.#{job.queue_name}.#{name}", duration(started, finished))
     end

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'vitals/integrations/notifications/active_job'
 
 describe Vitals::Integrations::Notifications::ActiveJob do
-  let(:reporter){Vitals::Reporters::InmemReporter.new}
+  let(:reporter) { Vitals::Reporters::InmemReporter.new }
   before do
     reporter.flush
     Vitals.configure! do |c|

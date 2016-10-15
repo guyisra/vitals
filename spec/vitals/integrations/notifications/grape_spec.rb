@@ -9,7 +9,7 @@ require 'grape'
 #
 
 describe Vitals::Integrations::Notifications::Grape do
-  let(:reporter){Vitals::Reporters::InmemReporter.new}
+  let(:reporter) { Vitals::Reporters::InmemReporter.new }
   before do
     reporter.flush
     Vitals.configure! do |c|
@@ -50,7 +50,7 @@ describe Vitals::Integrations::Notifications::Grape do
         end
 
         resource :auth do
-          http_basic do |u,p|
+          http_basic do |u, p|
             false
           end
 

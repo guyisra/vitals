@@ -9,7 +9,7 @@ require 'sinatra/base'
 #
 
 describe Vitals::Integrations::Rack::Requests do
-  let(:reporter){Vitals::Reporters::InmemReporter.new}
+  let(:reporter) { Vitals::Reporters::InmemReporter.new }
   before do
     reporter.flush
     Vitals.configure! do |c|
@@ -29,7 +29,7 @@ describe Vitals::Integrations::Rack::Requests do
           end
         end
         resource :auth do
-          http_basic do |u,p|
+          http_basic do |u, p|
             false
           end
 
@@ -115,7 +115,7 @@ describe Vitals::Integrations::Rack::Requests do
     def app
       Class.new(Sinatra::Base) do
         use(Class.new do
-          def initialize(app, options={})
+          def initialize(app, options = {})
             @app = app
           end
 

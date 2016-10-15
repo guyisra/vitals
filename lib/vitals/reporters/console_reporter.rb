@@ -2,7 +2,7 @@ module Vitals::Reporters
   class ConsoleReporter < BaseReporter
     attr_accessor :format
 
-    def initialize(category:'main', output: $stdout, format:nil)
+    def initialize(category: 'main', output: $stdout, format: nil)
       @format = format
       @category = category
       @output = output
@@ -25,7 +25,7 @@ module Vitals::Reporters
     end
 
     def print(str)
-      @output.printf("#{ str }\n")
+      @output.printf("#{str}\n")
     end
   end
 end

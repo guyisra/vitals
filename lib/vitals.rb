@@ -1,9 +1,9 @@
 require "vitals/version"
 module Vitals
-  module Formats;end
-  module Reporters;end
+  module Formats; end
+  module Reporters; end
   module Integrations
-    module Notifications;end
+    module Notifications; end
   end
 end
 
@@ -41,7 +41,7 @@ module Vitals
   def self.subscribe!(*modules)
     # give out a list of subscribers too
     modules.map do |mod|
-      require "vitals/integrations/notifications/#{ mod }"
+      require "vitals/integrations/notifications/#{mod}"
       klass = Object.const_get("Vitals::Integrations::Notifications::#{classify(mod)}")
       klass.subscribe!
     end
@@ -70,6 +70,6 @@ module Vitals
 
   private
   def self.classify(sym)
-    sym.to_s.split('_').collect!{ |w| w.capitalize }.join
+    sym.to_s.split('_').collect! { |w| w.capitalize }.join
   end
 end
