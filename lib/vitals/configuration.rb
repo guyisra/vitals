@@ -27,9 +27,9 @@ module Vitals
 
     def build_format
       @format.new(
-        environment: self.environment,
-        facility:    self.facility,
-        host:        self.host
+        environment: environment,
+        facility:    facility,
+        host:        host
       )
     end
 

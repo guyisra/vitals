@@ -22,18 +22,18 @@ module Vitals::Integrations::Rack
 
       path = if env[SINATRA_PATH_INFO]
                Requests.sinatra_path(env)
-          elsif env[GRAPE_PATH_INFO]
-            Requests.grape_path(env)
-          elsif env[RAILS_PATH_INFO]
-            Requests.rails_path(env)
-          else
-            Requests.rack_path(env)
-          end
+             elsif env[GRAPE_PATH_INFO]
+               Requests.grape_path(env)
+             elsif env[RAILS_PATH_INFO]
+               Requests.rails_path(env)
+             else
+               Requests.rack_path(env)
+             end
 
       path = !path.empty? ? path + '.' : path
       m = "requests.#{@prefix}#{req_prefix}#{path}#{env[REQUEST_METHOD].downcase}.#{status}"
 
-      # TODO add option to customize 'requests' through options
+      # TODO: add option to customize 'requests' through options
       Vitals.timing(m, Vitals::Utils.sec_to_ms(t))
 
       [status, header, body]
@@ -51,10 +51,10 @@ module Vitals::Integrations::Rack
                 # when unauthenticated, GRAPE_PATH_INFO route has a nil env. this one
                 # here doesn't:
                 env[RACK_ROUTER_INFO][:route_info]
-      else
-        # grape > 0.11
-        env[GRAPE_PATH_INFO].route
-      end
+              else
+                # grape > 0.11
+                env[GRAPE_PATH_INFO].route
+              end
       Vitals::Utils.grape_path(route)
     end
 

@@ -13,11 +13,11 @@ require 'rack/test'
 require 'benchmark/ipsa'
 require 'memory_profiler'
 
-# TODO remember to set vitals config to nil
+# TODO: remember to set vitals config to nil
 # globally for the test suite so that we don't
 # have test fallout (Vitals is static)
 
-# TODO extract this pattern to a gem
+# TODO: extract this pattern to a gem
 def bench(label, cases)
   it "bench #{label}" do
     Benchmark.ipsa do |x|

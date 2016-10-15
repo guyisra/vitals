@@ -15,7 +15,7 @@ module Vitals::Integrations::Notifications
 
       path = Vitals::Utils.grape_path(route)
 
-      # TODO move 'grape' to configuration opts in subscribe!(opts)
+      # TODO: move 'grape' to configuration opts in subscribe!(opts)
       m = "grape.#{path}.#{method}.#{endpoint.status}.all"
       Vitals.timing(m, duration(started, finished))
     end

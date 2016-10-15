@@ -10,7 +10,7 @@ module Vitals::Formats
       @host = host
       @prefix = [environment, host, facility].compact.map { |m| Vitals::Utils.normalize_metric(m) }
                                              .join(".").freeze
-      # TODO prematerialize working prefix with metric name sanitation
+      # TODO: prematerialize working prefix with metric name sanitation
     end
 
     def format(m)

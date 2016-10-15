@@ -30,7 +30,7 @@ describe Vitals::Integrations::Notifications::Grape do
         format :json
         prefix :api
 
-        rescue_from StandardError do |e|
+        rescue_from StandardError do |_e|
           error! "foobar"
         end
 
@@ -50,7 +50,7 @@ describe Vitals::Integrations::Notifications::Grape do
         end
 
         resource :auth do
-          http_basic do |u, p|
+          http_basic do |_u, _p|
             false
           end
 

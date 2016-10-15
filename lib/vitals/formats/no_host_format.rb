@@ -15,7 +15,7 @@ module Vitals::Formats
 
     def format(m)
       return @prefix if m.nil? || m.empty?
-      # TODO optimize by building a renderer function (inlining this) in the initializer.
+      # TODO: optimize by building a renderer function (inlining this) in the initializer.
       # see https://github.com/evanphx/benchmark-ips/blob/master/lib/benchmark/ips/job/entry.rb#L63
       [@prefix, Vitals::Utils.normalize_metric(m)].reject { |s| s.nil? || s.empty? }
                                                   .join(Vitals::Utils::SEPARATOR)

@@ -29,7 +29,7 @@ describe Vitals::Integrations::Rack::Requests do
           end
         end
         resource :auth do
-          http_basic do |u, p|
+          http_basic do |_u, _p|
             false
           end
 
