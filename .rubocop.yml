@@ -15,8 +15,6 @@ Lint/EndAlignment:
   AutoCorrect: true
 Style/SignalException:
   EnforcedStyle: semantic
-Style/StringLiterals:
-  Enabled: false
 Style/WordArray:
   Enabled: false
 Style/BlockDelimiters:
