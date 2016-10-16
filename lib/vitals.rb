@@ -1,4 +1,4 @@
-require "vitals/version"
+require 'vitals/version'
 module Vitals
   module Formats; end
   module Reporters; end

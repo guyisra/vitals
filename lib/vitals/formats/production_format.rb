@@ -9,7 +9,7 @@ module Vitals::Formats
       @facility = facility
       @host = host
       @prefix = [environment, host, facility].compact.map { |m| Vitals::Utils.normalize_metric(m) }
-                                             .join(".").freeze
+                                             .join('.').freeze
       # TODO: prematerialize working prefix with metric name sanitation
     end
 

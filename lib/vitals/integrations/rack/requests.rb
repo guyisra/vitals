@@ -11,7 +11,7 @@ module Vitals::Integrations::Rack
 
     def initialize(app, options = {})
       @app = app
-      @prefix = options[:prefix] ? options[:prefix] + "." : nil
+      @prefix = options[:prefix] ? options[:prefix] + '.' : nil
     end
 
     def call(env)

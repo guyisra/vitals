@@ -22,7 +22,7 @@ describe Vitals::Integrations::Notifications::Grape do
     ActiveSupport::Notifications.unsubscribe(@sub)
   end
 
-  describe "grape notifications api" do
+  describe 'grape notifications api' do
     include Rack::Test::Methods
     def app
       Class.new(Grape::API) do
@@ -31,21 +31,21 @@ describe Vitals::Integrations::Notifications::Grape do
         prefix :api
 
         rescue_from StandardError do |_e|
-          error! "foobar"
+          error! 'foobar'
         end
 
         get :raise_error do
-          fail StandardError, "Oh noes!"
+          fail StandardError, 'Oh noes!'
         end
 
         get :make_error do
-          error! "foobar"
+          error! 'foobar'
         end
 
         resource :statuses do
           get :public_timeline do
             sleep 0.1
-            "hello world"
+            'hello world'
           end
         end
 
@@ -55,7 +55,7 @@ describe Vitals::Integrations::Notifications::Grape do
           end
 
           get :secret do
-            "impossible to get here"
+            'impossible to get here'
           end
         end
       end
@@ -87,7 +87,7 @@ describe Vitals::Integrations::Notifications::Grape do
     end
 
     it 'handles prefix, version and format' do
-      get "/api/v1/statuses/public_timeline"
+      get '/api/v1/statuses/public_timeline'
       last_response.ok?.must_equal(true)
 
       reporter.reports.count.must_equal(1)
@@ -105,7 +105,7 @@ describe Vitals::Integrations::Notifications::Grape do
       end
 
       it 'handles prefix, version and format' do
-        get "/api/v1/statuses/public_timeline"
+        get '/api/v1/statuses/public_timeline'
         last_response.ok?.must_equal(true)
 
         reporter.reports.count.must_equal(1)
@@ -116,7 +116,7 @@ describe Vitals::Integrations::Notifications::Grape do
     end
   end
 
-  describe "grape nonversioned notifications api" do
+  describe 'grape nonversioned notifications api' do
     include Rack::Test::Methods
     def app
       Class.new(Grape::API) do
@@ -124,14 +124,14 @@ describe Vitals::Integrations::Notifications::Grape do
         resource :statuses do
           get :public_timeline do
             sleep 0.1
-            "hello world"
+            'hello world'
           end
         end
       end
     end
 
     it 'handles default api' do
-      get "/statuses/public_timeline"
+      get '/statuses/public_timeline'
       last_response.ok?.must_equal(true)
       reporter.reports.count.must_equal(1)
       report = reporter.reports[0]

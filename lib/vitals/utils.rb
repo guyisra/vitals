@@ -19,7 +19,7 @@ module Vitals
       version = route.route_version
       path = route.route_path.dup[1..-1]          # /foo/bar/baz -> foo/bar/baz
       path.sub!(/\(\..*\)$/, '')                  # (.json) -> ''
-      path.sub!(":version", version) if version   # :version -> v1
+      path.sub!(':version', version) if version   # :version -> v1
       path.gsub!(/\//, path_sep) # foo/bar -> foo.bar
       path
     end
