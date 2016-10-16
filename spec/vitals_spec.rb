@@ -60,11 +60,12 @@ describe Vitals do
     end
 
     it 'configures modules' do
-             subscribers = Vitals.subscribe!(:action_controller, :active_job, :grape)
-             subscribers.each(&:wont_be_nil)
-           ensure
-             subscribers.each { |sub| ActiveSupport::Notifications.unsubscribe(sub) }
-           end
+      begin
+       subscribers = Vitals.subscribe!(:action_controller, :active_job, :grape)
+       subscribers.each(&:wont_be_nil)
+      ensure
+       subscribers.each { |sub| ActiveSupport::Notifications.unsubscribe(sub) }
+      end
     end
   end
 end
