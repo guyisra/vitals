@@ -39,8 +39,6 @@ module Vitals::Integrations::Rack
       [status, header, body]
     end
 
-    private
-
     def self.sinatra_path(env)
       env[SINATRA_PATH_INFO].gsub(/^\w+\s+\//, '')
     end

@@ -67,9 +67,11 @@ module Vitals
     reporter.gauge(m, val)
   end
 
-  private
+  class << self
+    private
 
-  def self.classify(sym)
-    sym.to_s.split('_').collect!(&:capitalize).join
+    def classify(sym)
+      sym.to_s.split('_').collect!(&:capitalize).join
+    end
   end
 end
